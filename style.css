@@ -1,0 +1,429 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+/* Body */
+body {
+  background-color: #f5f1e8;
+  color: #2b1d14;
+}
+
+/* Navigation */
+.navbar {
+  background: #f5f1e8;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 35px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #7a6a58;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.navbar a.active {
+  color: #2b1d14;
+  font-weight: bold;
+  position: relative;
+}
+
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #2b1d14;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+/* Page title */
+.page-title h1 {
+  font-size: 48px;
+  color: #7b4e2e;
+  text-align: center;
+  margin: 35px 0 25px;
+}
+
+/* ── Home Page Hero Section ── */
+.hero-home {
+  display: flex;
+  margin: 40px 60px;
+  min-height: 360px;
+  background-color: #7b4e2e;
+  color: #f3e0d3;
+  border-radius: 15px;
+  overflow: hidden;
+  align-items: center;
+}
+
+/* Left text panel */
+.hero-home-text {
+  width: 50%;
+  padding: 50px;
+}
+
+.hero-home-text h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #f3e0d3;
+}
+
+.hero-home-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+/* Glowing Books arrow button */
+.books-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background-color: #5a331d;
+  color: #f3e0d3;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow:
+    0 0 10px #c28755,
+    0 0 20px #d49e6c,
+    0 0 30px #e0b987,
+    0 0 40px #f3d0a3;
+  transition: all 0.3s ease;
+}
+
+.books-arrow:hover {
+  box-shadow:
+    0 0 15px #c28755,
+    0 0 25px #d49e6c,
+    0 0 35px #e0b987,
+    0 0 50px #f3d0a3;
+  transform: translateX(5px);
+}
+
+.books-arrow .arrow {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.books-arrow:hover .arrow {
+  transform: translateX(10px);
+}
+
+/* Right image panel (Home) */
+.hero-home-image {
+  width: 50%;
+  height: 100%;
+  background: url("pics/tre.jpg") center center no-repeat;
+  background-size: contain; /* fits fully, no cropping */
+  border-radius: 0 15px 15px 0;
+}
+
+/* ── Best Book of the Month Section ── */
+.best-book-container {
+  display: flex;
+  width: 70%;             /* smaller width */
+  max-width: 900px;       /* optional max width */
+  margin: 0 auto 60px;
+  height: 380px;
+  background-color: #7b4e2e;
+  color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Left side text */
+.best-book-text {
+  width: 50%;                  /* left half */
+  padding: 50px 20px 50px 30px; /* minimal right padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.best-book-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #f3e0d3;
+}
+
+.best-book-text p {
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 100%;            /* fill left half */
+  color: #f3e0d3;
+}
+
+/* Right side image */
+.best-book-image {
+  width: 50%;                  /* right half */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* center the image next to text */
+  padding: 20px 15px;
+}
+
+.best-book-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;          /* full image visible without zoom */
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-home,
+  .best-book-container {
+    flex-direction: column;
+    width: 92%;
+    height: auto;
+  }
+
+  .hero-home-text,
+  .hero-home-image,
+  .best-book-text,
+  .best-book-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .best-book-text {
+    padding: 40px 20px;
+  }
+
+  .best-book-image {
+    height: 340px;
+    padding: 20px 30px;
+    justify-content: center;
+  }
+
+  .page-title h1 {
+    font-size: 38px;
+    margin: 30px 0 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/* news  */
+/* ── News Page Styles ── */
+body.news-page {
+  background-color: #f5f1e8; /* same cream background */
+}
+
+/* Page title */
+body.news-page .page-title h1 {
+  color: #7b4e2e;
+  text-align: center;
+  margin: 35px 0 25px;
+}
+
+/* News Grid */
+body.news-page .news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* News Card */
+body.news-page .news-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.news-page .news-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* News Image */
+body.news-page .news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* News Info */
+body.news-page .news-info {
+  padding: 20px;
+}
+
+body.news-page .news-info h3 {
+  font-size: 18px;
+  color: #2b1d14;
+  margin-bottom: 10px;
+}
+
+body.news-page .news-info p {
+  font-size: 14px;
+  color: #7a6a58;
+  margin-bottom: 10px;
+}
+
+body.news-page .news-info .news-date {
+  font-size: 12px;
+  color: #b08b5b;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  body.news-page .news-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 650px) {
+  body.news-page .news-card img {
+    height: 140px;
+  }
+}
+
+
+
+      /* feedback */
+      /* ── Feedback Page Styles ── */
+body.feedback-page {
+  background-color: #f5f1e8; /* same cream as home page */
+  color: #2b1d14;
+  font-family: "Georgia", serif;
+}
+
+body.feedback-page .page-title h1 {
+  color: #7b4e2e;
+  text-align: center;
+  margin: 35px 0 25px;
+}
+
+/* Form container */
+body.feedback-page .feedback-form-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Form title */
+body.feedback-page .feedback-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #7b4e2e;
+}
+
+/* Labels and Inputs */
+body.feedback-page .feedback-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+body.feedback-page .feedback-form input,
+body.feedback-page .feedback-form select,
+body.feedback-page .feedback-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Georgia", serif;
+}
+
+body.feedback-page .feedback-form textarea {
+  resize: none;
+}
+
+/* Submit Button */
+body.feedback-page .feedback-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #7b4e2e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+body.feedback-page .feedback-form button:hover {
+  background-color: #5a3721;
+}
+
+/* Social Media Links */
+body.feedback-page .social-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+body.feedback-page .social-links h3 {
+  margin-bottom: 15px;
+  color: #7b4e2e;
+}
+
+body.feedback-page .social-links a {
+  color: #7b4e2e;
+  font-size: 20px;
+  margin: 0 12px;
+  transition: color 0.3s;
+}
+
+body.feedback-page .social-links a:hover {
+  color: #5a3721;
+}
+
+
+
+.feedback-page .audio-section {
+  background-color: #805232;  /* Cream color matching other pages */
+  padding: 10px 15px;
+  max-width: 300px;           /* Small container */
+  margin: 30px auto;          /* Centered horizontally */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+}
+
+.feedback-page .audio-section audio {
+  width: 100%;   /* Fit audio player inside container */
+  margin-top: 5px;
+}
+

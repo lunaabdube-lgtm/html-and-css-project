@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="feedback-page">
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="feedback.html" class="active">Feedback</a></li>
+    </ul>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Feedback</h1>
+  </section>
+
+  <!-- Feedback Form -->
+  <section class="feedback-form-container">
+      <form id="feedbackForm" class="feedback-form">
+
+   
+      <h2 class="feedback-title">We value your feedback!</h2>
+
+
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <!-- Gender -->
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+      </select>
+
+      <!-- Age -->
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Your Age" min="10" max="120" required>
+
+      <!-- Comment -->
+      <label for="comment">Comment:</label>
+      <textarea id="comment" name="comment" placeholder="Your thoughts..." rows="5" required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <h3>Connect with us:</h3>
+      <a href="https://www.facebook.com/BBookhub"
+       target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com/BBookhub"
+       target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/BBookhub"
+       target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/BBookhub"
+       target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </section>
+
+  <!-- Audio Section -->
+<section class="audio-section">
+  <p></p>
+  <p>Our favorite classical when you read a book:</p>
+  <audio controls>
+  <source src="classical.m4a" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

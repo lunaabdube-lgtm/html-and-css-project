@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Books - Book Hub</title>
+<style>
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Georgia", serif; }
+
+/* Body */
+body { background-color: #f5f1e8; color: #2b1d14; }
+
+/* Navigation (same as homepage) */
+.navbar { background: #f5f1e8; padding: 25px 0; text-align: center; }
+.navbar ul { list-style: none; display: inline-flex; gap: 35px; }
+.navbar a { text-decoration: none; color: #7a6a58; font-size: 16px; text-transform: lowercase; }
+.navbar a.active { color: #2b1d14; font-weight: bold; position: relative; }
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 20px; height: 20px;
+  background: #2b1d14;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+/* Genre Filter Buttons */
+.genre-filters { width: 90%; margin: 20px auto 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+.genre-filters button {
+  padding: 8px 14px; background: #fff3e6; border: 1px solid #e4d2c0; border-radius: 8px;
+  cursor: pointer; font-size: 14px; color: #5c3a24; transition: 0.25s;
+}
+.genre-filters button:hover { background: #e8d0b8; }
+.genre-filters button.active { background: #cfa27b; color: white; }
+
+/* Book Grid */
+.book-grid { display: flex; flex-wrap: wrap; gap: 25px; width: 90%; margin: 0 auto 50px; }
+.book-card {
+  width: calc((100% - 4*25px)/5);
+  background: #fff3e6; border: 1px solid #e4d2c0; border-radius: 12px; overflow: hidden;
+  transition: 0.25s ease;
+}
+.book-card:hover { transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0,0,0,0.08); }
+.book-card img { width: 100%; height: 230px; object-fit: contain; }
+
+/* Book Info */
+.book-info { padding: 12px; text-align: center; }
+.book-title { font-weight: 700; color: #442a19; margin-bottom: 6px; }
+.book-pages { font-size: 13px; color: #7a6a58; margin-bottom: 6px; }
+.book-rating { font-size: 14px; color: #d28b47; font-weight: bold; }
+.desc-btn {
+  margin-top: 10px; font-size: 13px; padding: 5px 10px; border-radius: 6px;
+  border: 1px solid #cfa27b; background: #fffaf4; cursor: pointer; transition: 0.25s;
+}
+.desc-btn:hover { background: #efd0b1; }
+.desc-text { display: none; margin-top: 8px; font-size: 13px; color: #6b5a4a; line-height: 1.3; }
+
+/* Responsive */
+@media (max-width: 950px) { .book-card { width: calc((100% - 3*25px)/4); } }
+@media (max-width: 720px) { .book-card { width: calc((100% - 2*25px)/3); } }
+@media (max-width: 520px) { .book-card { width: calc((100% - 25px)/2); } }
+@media (max-width: 350px) { .book-card { width: 100%; } }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="books.html" class="active">Books</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
+
+<!-- Genre Filter -->
+<div class="genre-filters">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="mystery">Mystery</button>
+  <button data-filter="romance">Romance</button>
+  <button data-filter="fantasy">Fantasy</button>
+  <button data-filter="dystopia">Dystopia</button>
+  <button data-filter="classic">Classic</button>
+</div>
+
+<!-- Books Grid -->
+<div class="book-grid">
+<!-- Mystery -->
+<div class="book-card" data-genre="mystery"><img src="pics/m1.jpg"><div class="book-info"><p class="book-title">IN THE SHADOW OF</p><p class="book-pages">320 pages</p><p class="book-rating">⭐ 4.5</p><button class="desc-btn">Details</button><p class="desc-text">A thrilling mystery that keeps you guessing.</p></div></div>
+<div class="book-card" data-genre="mystery"><img src="pics/m2.jpg"><div class="book-info"><p class="book-title">SHERLOCK HOLMES</p><p class="book-pages">422 pages</p><p class="book-rating">⭐ 4.4</p><button class="desc-btn">Details</button><p class="desc-text">Classic detective stories with brilliant deductions.</p></div></div>
+<div class="book-card" data-genre="mystery"><img src="pics/m3.jpg"><div class="book-info"><p class="book-title">THE GRANDEST GAME</p><p class="book-pages">350 pages</p><p class="book-rating">⭐ 4.3</p><button class="desc-btn">Details</button><p class="desc-text">High stakes and thrilling crime solving.</p></div></div>
+<div class="book-card" data-genre="mystery"><img src="pics/m4.jpg"><div class="book-info"><p class="book-title">GAMES UNTOLD</p><p class="book-pages">410 pages</p><p class="book-rating">⭐ 4.2</p><button class="desc-btn">Details</button><p class="desc-text">Secrets hidden within dangerous games.</p></div></div>
+<div class="book-card" data-genre="mystery"><img src="pics/m5.jpg"><div class="book-info"><p class="book-title">KILLER INSTINCT</p><p class="book-pages">290 pages</p><p class="book-rating">⭐ 4.1</p><button class="desc-btn">Details</button><p class="desc-text">Detective story about danger and instinct.</p></div></div>
+
+<!-- Romance -->
+<div class="book-card" data-genre="romance"><img src="pics/r1.jpg"><div class="book-info"><p class="book-title">LOVE AND OTHER WORDS</p><p class="book-pages">279 pages</p><p class="book-rating">⭐ 4.6</p><button class="desc-btn">Details</button><p class="desc-text">A story about love, loss, and rediscovery.</p></div></div>
+<div class="book-card" data-genre="romance"><img src="pics/r2.jpg"><div class="book-info"><p class="book-title">THE UPSIDE OF FALLING</p><p class="book-pages">325 pages</p><p class="book-rating">⭐ 4.4</p><button class="desc-btn">Details</button><p class="desc-text">Emotional journey of romance and self-discovery.</p></div></div>
+<div class="book-card" data-genre="romance"><img src="pics/r3.jpg"><div class="book-info"><p class="book-title">I AM NOT JESSICA CHEN</p><p class="book-pages">290 pages</p><p class="book-rating">⭐ 4.5</p><button class="desc-btn">Details</button><p class="desc-text">Romantic tale full of identity and heartfelt moments.</p></div></div>
+<div class="book-card" data-genre="romance"><img src="pics/r4.jpg"><div class="book-info"><p class="book-title">CHECK AND MATE</p><p class="book-pages">450 pages</p><p class="book-rating">⭐ 4.7</p><button class="desc-btn">Details</button><p class="desc-text">Love and strategy intertwine in this exciting romance.</p></div></div>
+<div class="book-card" data-genre="romance"><img src="pics/r5.jpg"><div class="book-info"><p class="book-title">WHEN IN ROME</p><p class="book-pages">498 pages</p><p class="book-rating">⭐ 4.2</p><button class="desc-btn">Details</button><p class="desc-text">Romantic adventure in the city of love.</p></div></div>
+
+<!-- Fantasy -->
+<div class="book-card" data-genre="fantasy"><img src="pics/f1.jpg"><div class="book-info"><p class="book-title">CARAVAL</p><p class="book-pages">500 pages</p><p class="book-rating">⭐ 4.8</p><button class="desc-btn">Details</button><p class="desc-text">Enchanting world of magic, deception, and love.</p></div></div>
+<div class="book-card" data-genre="fantasy"><img src="pics/f2.jpg"><div class="book-info"><p class="book-title">The BRIDGE KINGDOM</p><p class="book-pages">310 pages</p><p class="book-rating">⭐ 4.7</p><button class="desc-btn">Details</button><p class="desc-text">Fantasy tale of war, love, and intrigue.</p></div></div>
+<div class="book-card" data-genre="fantasy"><img src="pics/f3.jpg"><div class="book-info"><p class="book-title">POWERLESS</p><p class="book-pages">662 pages</p><p class="book-rating">⭐ 4.6</p><button class="desc-btn">Details</button><p class="desc-text">Story of heroes and magical worlds.</p></div></div>
+<div class="book-card" data-genre="fantasy"><img src="pics/f4.jpg"><div class="book-info"><p class="book-title">DANCE OF THIEVES</p><p class="book-pages">541 pages</p><p class="book-rating">⭐ 4.5</p><button class="desc-btn">Details</button><p class="desc-text">Thrilling fantasy with heists and magic.</p></div></div>
+<div class="book-card" data-genre="fantasy"><img src="pics/f5.jpg"><div class="book-info"><p class="book-title">THE RED QUEEN</p><p class="book-pages">509 pages</p><p class="book-rating">⭐ 4.2</p><button class="desc-btn">Details</button><p class="desc-text">Power and survival in a fantastical kingdom.</p></div></div>
+
+<!-- Dystopia -->
+<div class="book-card" data-genre="dystopia"><img src="pics/d1.jpg"><div class="book-info"><p class="book-title">DIVERGENT</p><p class="book-pages">328 pages</p><p class="book-rating">⭐ 4.7</p><button class="desc-btn">Details</button><p class="desc-text">A society divided into factions, and one girl who doesn't fit in.</p></div></div>
+<div class="book-card" data-genre="dystopia"><img src="pics/d2.jpg"><div class="book-info"><p class="book-title">SHATTER ME</p><p class="book-pages">374 pages</p><p class="book-rating">⭐ 4.5</p><button class="desc-btn">Details</button><p class="desc-text">Dystopian world with powerful abilities and freedom fight.</p></div></div>
+<div class="book-card" data-genre="dystopia"><img src="pics/d3.jpg"><div class="book-info"><p class="book-title">LEGENED</p><p class="book-pages">487 pages</p><p class="book-rating">⭐ 4.3</p><button class="desc-btn">Details</button><p class="desc-text">Gripping tale of rebellion and courage.</p></div></div>
+<div class="book-card" data-genre="dystopia"><img src="pics/d4.jpg"><div class="book-info"><p class="book-title">THE MAZE RUNNER</p><p class="book-pages">268 pages</p><p class="book-rating">⭐ 4.6</p><button class="desc-btn">Details</button><p class="desc-text">Teens trapped in deadly maze must survive.</p></div></div>
+<div class="book-card" data-genre="dystopia"><img src="pics/d5.jpg"><div class="book-info"><p class="book-title">THE CURE</p><p class="book-pages">194 pages</p><p class="book-rating">⭐ 4.4</p><button class="desc-btn">Details</button><p class="desc-text">Fast-paced story of survival and search for a cure.</p></div></div>
+
+<!-- Classic -->
+<div class="book-card" data-genre="classic"><img src="pics/c1.jpg"><div class="book-info"><p class="book-title">JANE EYRE</p><p class="book-pages">281 pages</p><p class="book-rating">⭐ 4.8</p><button class="desc-btn">Details</button><p class="desc-text">Classic story of love, morality, and independence.</p></div></div>
+<div class="book-card" data-genre="classic"><img src="pics/c2.jpg"><div class="book-info"><p class="book-title">THE GREAT GATSBY</p><p class="book-pages">635 pages</p><p class="book-rating">⭐ 4.2</p><button class="desc-btn">Details</button><p class="desc-text">Tragic story of Jay Gatsby and the American dream.</p></div></div>
+<div class="book-card" data-genre="classic"><img src="pics/c3.jpg"><div class="book-info"><p class="book-title">CRIME AND PUNSHIMENT</p><p class="book-pages">180 pages</p><p class="book-rating">⭐ 4.6</p><button class="desc-btn">Details</button><p class="desc-text">Psychological exploration of crime, guilt, and redemption.</p></div></div>
+<div class="book-card" data-genre="classic"><img src="pics/c4.jpg"><div class="book-info"><p class="book-title">THE LORD OF THE RINGS</p><p class="book-pages">279 pages</p><p class="book-rating">⭐ 4.7</p><button class="desc-btn">Details</button><p class="desc-text">Epic fantasy adventure across Middle-earth.</p></div></div>
+<div class="book-card" data-genre="classic"><img src="pics/c5.jpg"><div class="book-info"><p class="book-title">PRIDE AND PREJUDICE</p><p class="book-pages">500 pages</p><p class="book-rating">⭐ 4.5</p><button class="desc-btn">Details</button><p class="desc-text">Classic tale of love and societal expectations.</p></div></div>
+
+</div>
+
+<script>
+// Genre Filter
+const filterButtons = document.querySelectorAll(".genre-filters button");
+const books = document.querySelectorAll(".book-card");
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const filter = btn.getAttribute("data-filter");
+    books.forEach(book => {
+      const genre = book.getAttribute("data-genre");
+      book.style.display = (filter === "all" || genre === filter) ? "block" : "none";
+    });
+  });
+});
+
+// Details Toggle
+document.querySelectorAll(".desc-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const desc = btn.nextElementSibling;
+    if(desc.style.display === "block") {
+      desc.style.display = "none";
+      btn.textContent = "Details";
+    } else {
+      desc.style.display = "block";
+      btn.textContent = "Hide";
+    }
+  });
+});
+</script>
+</body>
+</html>
